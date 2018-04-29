@@ -4,13 +4,14 @@
   "description": "imageboard",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node main.js",
+    "test": ""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HiddenBitStudios/SIK.git"
   },
-  "author": "",
+  "author": "HiddenBitStudios",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HiddenBitStudios/SIK/issues"
