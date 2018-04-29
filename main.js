@@ -15,6 +15,7 @@ sik.path = fs.realpathSync(__dirname);
 
 
 sik.handleRequest = function handleRequest(req, res) {
+	console.log("test")
 	res.statusCode = 404;
 	res.setHeader("X-Powered-By", "NodeJS");
 	res.setHeader("X-Author", "HiddenBitStudios");
