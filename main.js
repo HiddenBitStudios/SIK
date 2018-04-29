@@ -29,7 +29,7 @@ sik.start = function start() {
 			key: fs.readFileSync(sik.cfg.keyFile),
 			cert; fs.readFileSync(sik.cfg.certFile)
 		};
-		sik.server = https.createServer(sik.handleRequest);
+		sik.server = https.createServer(sslOpts, sik.handleRequest);
 		sik.server.listen(sik.cfg.port, sik.cfg.ip);
 		sik.started = true;
 	}
