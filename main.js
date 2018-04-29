@@ -8,8 +8,8 @@ sik.cfg = {
 	ip: "0.0.0.0",
 	resourceDir: "res",
 	indexFile: "index.html",
-	keyFile: "/etc/ssl/private/apache-selfsigned.key",
-	certFile: "/etc/ssl/certs/apache-selfsigned.crt"
+	keyFile: "/etc/letsencrypt/live/meme-dealer.com/privkey.pem",
+	certFile: "/etc/letsencrypt/live/meme-dealer.com/cert.pem"
 };
 sik.path = fs.realpathSync(__dirname);
 
