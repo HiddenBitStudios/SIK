@@ -25,6 +25,10 @@ sik.handleRequest = function handleRequest(req, res) {
 
 sik.start = function start() {
 	if (!sik.started) {
+		let sslOpts = {
+			key: fs.readFileSync(sik.cfg.keyFile),
+			cert; fs.readFileSync(sik.cfg.certFile)
+		};
 		sik.server = https.createServer(sik.handleRequest);
 		sik.server.listen(sik.cfg.port, sik.cfg.ip);
 		sik.started = true;
