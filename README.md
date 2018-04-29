@@ -1,1 +1,2 @@
 # SIK
+imageboard
