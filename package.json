@@ -4,7 +4,7 @@
   "description": "imageboard",
   "main": "main.js",
   "scripts": {
-    "start" : "node main.js",
+    "start": "node main.js",
     "test": ""
   },
   "repository": {
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/HiddenBitStudios/SIK/issues"
   },
-  "homepage": "https://github.com/HiddenBitStudios/SIK#readme"
+  "homepage": "https://github.com/HiddenBitStudios/SIK#readme",
+  "dependencies": {
+    "restify": "^7.1.1"
+  }
 }
