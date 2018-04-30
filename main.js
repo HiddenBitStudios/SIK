@@ -1,5 +1,6 @@
 const https = require("https");
 const fs = require("fs");
+require("api.js")
 const mime = require("mime-types");
 const sik = {};
 sik.started = false;
@@ -12,7 +13,7 @@ sik.cfg = {
 	certFile: "/etc/letsencrypt/live/meme-dealer.com/cert.pem"
 };
 sik.path = fs.realpathSync(__dirname);
-
+sik.api = new API()
 
 sik.handleRequest = function handleRequest(req, res) {
 	res.statusCode = 404;
