@@ -1,6 +1,6 @@
 const https = require("https");
 const fs = require("fs");
-require("api.js")
+require("../api.js")
 const mime = require("mime-types");
 const sik = {};
 sik.started = false;
