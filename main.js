@@ -1,7 +1,15 @@
 const https = require("https");
 const fs = require("fs");
-require("../api.js")
+const API = require("./api.js")
 const mime = require("mime-types");
+let faceRec = (function(){
+		try {
+			return require("face-recognition");
+		} catch(e) {
+			console.log("Couldn't load face-recognition");
+			return false;
+		}
+	})();
 const sik = {};
 sik.started = false;
 sik.cfg = {
@@ -13,7 +21,7 @@ sik.cfg = {
 	certFile: "/etc/letsencrypt/live/meme-dealer.com/cert.pem"
 };
 sik.path = fs.realpathSync(__dirname);
-sik.api = new API()
+sik.api = new API();
 
 sik.handleRequest = function handleRequest(req, res) {
 	res.statusCode = 404;
