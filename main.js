@@ -15,7 +15,8 @@ sik.started = false;
 sik.cfg = {
 	ports: {
 		https : 2498,
-		api : 2499	
+		api : 2499,
+		ws : 2500
 	},
 	ip: "0.0.0.0",
 	resourceDir: "res",

@@ -20,6 +20,7 @@
   "dependencies": {
     "mime-types": "^2.1.18",
     "restify": "^7.1.1",
-    "restify-errors": "^6.0.0"
+    "restify-errors": "^6.0.0",
+    "ws": "^5.1.1"
   }
 }

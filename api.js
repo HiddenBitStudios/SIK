@@ -9,6 +9,7 @@ class API {
             name: 'SIK'
         });
         this.server.use(restify.plugins.bodyParser({}))
+        this.createRoutes()
     }
     isRunning() {
         return this.isRunning
@@ -17,6 +18,16 @@ class API {
         this.server.listen(this.port, () => {
             this.isRunning = true
         });
+    }
+    createRoutes() {
+        this.server.pre((req, res, next) => {
+            console.info(`${req.method} - ${req.url}`)
+            return next()
+        })
+        this.server.get("/api/info", (req, res, next) => {
+            res.send(200,"hey")
+            return next()
+        })
     }
 }
 
