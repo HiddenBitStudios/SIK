@@ -1,15 +1,21 @@
 class API {
-    constructor() {
+    constructor(port) {
+        this.port = port
+        this.isRunning = false
         const restify = require("restify")
         const errors = require("restify-errors")
         const restifyPlugins = require('restify').plugins
-        this.port = 2499;
         this.server = restify.createServer({
             name: 'SIK'
         });
         this.server.use(restify.plugins.bodyParser({}))
+    }
+    isRunning() {
+        return this.isRunning
+    }
+    start() {
         this.server.listen(this.port, () => {
-            console.log("API running on", this.port)
+            this.isRunning = true
         });
     }
 }

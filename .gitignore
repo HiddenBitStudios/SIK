@@ -1,2 +1,4 @@
 node_modules
 *.log
+cert.pem
+privkey.pem

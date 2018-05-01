@@ -13,15 +13,18 @@ let faceRec = (function(){
 const sik = {};
 sik.started = false;
 sik.cfg = {
-	port: 2498,
+	ports: {
+		https : 2498,
+		api : 2499	
+	},
 	ip: "0.0.0.0",
 	resourceDir: "res",
 	indexFile: "index.html",
-	keyFile: "/etc/letsencrypt/live/meme-dealer.com/privkey.pem",
-	certFile: "/etc/letsencrypt/live/meme-dealer.com/cert.pem"
+	keyFile: "privkey.pem",
+	certFile: "cert.pem"
 };
 sik.path = fs.realpathSync(__dirname);
-sik.api = new API();
+sik.api = new API(sik.cfg.ports.api);
 
 sik.handleRequest = function handleRequest(req, res) {
 	res.statusCode = 404;
@@ -39,15 +42,16 @@ sik.start = function start() {
 			cert: fs.readFileSync(sik.cfg.certFile)
 		};
 		sik.server = https.createServer(sslOpts, sik.handleRequest);
-		sik.server.listen(sik.cfg.port, sik.cfg.ip);
+		sik.server.listen(sik.cfg.ports.https, sik.cfg.ip);
 		sik.started = true;
 	}
 };
 
 sik.init = function init() {
-	// ?
-	console.log("Now starting https server");
 	sik.start();
+	console.log("HTTPS Server running on", sik.cfg.ports.https);
+	sik.api.start();
+	console.log("API Server running on", sik.cfg.ports.api);
 };
 
 sik.init();
