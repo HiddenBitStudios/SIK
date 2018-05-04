@@ -23,10 +23,12 @@ util.cloneRecursive = function cloneRecursive(obj) {
 			}
 		}
 		// recurTable[ov] = nv;
-		recurArrayOld.push(ov);
-		recurArrayNew.push(nv);
+		if (i === -1) {
+			recurArrayOld.push(ov);
+			recurArrayNew.push(nv);
+		}
 		return nv;
-	}
+	};
 	return f(obj);
 };
 
