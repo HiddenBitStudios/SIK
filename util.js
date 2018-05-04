@@ -30,4 +30,4 @@ util.cloneRecursive = function cloneRecursive(obj) {
 	return f(obj);
 };
 
-module.exports = util
+module.exports = util;
